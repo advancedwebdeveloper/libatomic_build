@@ -1,0 +1,16 @@
+name: Building and installing libatomic, into a distribution folder
+
+on: push
+
+jobs:
+  building:
+    # Name the Job
+    name: Extrackting and building libatomic
+    # Set the type of machine to run on
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Clonning GCC's sources
+        run: git clone git://gcc.gnu.org/git/gcc.git
