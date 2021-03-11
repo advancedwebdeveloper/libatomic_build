@@ -5,7 +5,7 @@ on: push
 jobs:
   building:
     # Name the Job
-    name: Extrackting and building libatomic
+    name: Extracting and building libatomic
     # Set the type of machine to run on
     runs-on: ubuntu-latest
 
