@@ -16,3 +16,5 @@ jobs:
         run: sudo apt update && sudo apt -y install make build-essential gcc git
       - name: Clonning GCC's sources
         run: git clone git://gcc.gnu.org/git/gcc.git && cd gcc && ./configure --prefix=$GITHUB_WORKSPACE/gcc_dist && make -j4
+      - name: Getting sources for POSIX Threads
+        run: git clone http://git.savannah.gnu.org/cgit/hurd/libpthread.git/
