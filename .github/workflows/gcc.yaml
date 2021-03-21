@@ -18,4 +18,8 @@ jobs:
         run: zip -r include.zip /usr/local/include/*
       - name: Add sources from headers
         run: zip -ur include.zip /usr/include/*
-        
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: upload-zip
+          path: include.zip
