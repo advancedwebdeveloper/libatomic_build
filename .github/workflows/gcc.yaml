@@ -13,8 +13,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Install necessary build tools and compilers
-        run: sudo apt update && sudo apt -y install make build-essential gcc git libgmp-dev libmpc-dev libmpfr-dev g++ libc-dev
-      - name: Clonning GCC's sources
-        run: git clone git://gcc.gnu.org/git/gcc.git && cd gcc && ./configure --prefix=$GITHUB_WORKSPACE/gcc_dist && make -j4
+        run: sudo apt update && sudo apt -y install make build-essential gcc libgmp-dev libmpc-dev libmpfr-dev g++ libc-dev zip
+      - name: Compress headers from /usr/local/include
+        run: zip -r include.zip /usr/local/include/*
       - name: Getting sources for POSIX Threads
         run: git clone http://git.savannah.gnu.org/cgit/hurd/libpthread.git/
